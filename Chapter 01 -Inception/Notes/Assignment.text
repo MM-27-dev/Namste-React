@@ -1,0 +1,47 @@
+What is Emmet?
+Emmet is a productivity tool for web developers that allows you to write HTML and CSS more quickly using abbreviated syntax. For example, typing div>ul>li*3 and pressing Tab expands to a div containing a ul with three li elements.
+Difference between a Library and Framework
+
+Library: A collection of reusable functions you call when needed (you're in control of the flow). Example: jQuery.
+Framework: A structure where the framework calls your code (inversion of control). Example: Angular.
+
+What is CDN? Why do we use it?
+A Content Delivery Network (CDN) is a distributed network of servers that delivers web content based on geographic location. We use CDNs to:
+
+Improve loading speed by serving content from servers closer to users
+Reduce server load by offloading content delivery
+Enhance availability and redundancy
+
+Why is React known as React?
+React is named for its core purpose: it "reacts" to data changes. Its reactive approach updates the UI automatically when the underlying data changes, rather than requiring manual DOM manipulation.
+What is crossorigin in script tag?
+The crossorigin attribute in a script tag specifies how the browser handles CORS (Cross-Origin Resource Sharing) requests. It helps manage security when loading resources from different domains. Values include anonymous (sends requests without credentials) and use-credentials (sends credentials).
+What is the difference between React and ReactDOM?
+
+React: The core library with components, state management, and reconciliation algorithm
+ReactDOM: The rendering layer specific to web browsers that actually manipulates the DOM
+
+What is the difference between react.development.js and react.production.js files via CDN?
+
+react.development.js: Larger file with helpful warnings, error messages, and debugging information. Use during development.
+react.production.js: Minified, optimized version without extra warnings. Smaller file size and better performance for production environments.
+
+What is async and defer?
+Both are attributes for the script tag that control how JavaScript files load:
+
+async: Script downloads in parallel with HTML parsing and executes as soon as it's available, interrupting parsing
+
+Use for independent scripts that don't rely on page structure
+
+
+defer: Script downloads in parallel with HTML parsing but executes only after parsing is complete, just before the DOMContentLoaded event
+
+Use for scripts that need the DOM fully built or depend on other scripts in order
+
+
+
+In simpler terms:
+
+Default (no attribute): "Stop and wait for me, then continue"
+async: "Don't wait for me, I'll run when I'm ready"
+defer: "Don't wait for me, I'll run when you're finished"

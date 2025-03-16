@@ -2956,8 +2956,8 @@ const parent = /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
     /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
         id: "child1"
     }, [
-        /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {}, "I'm an h1 tag"),
-        /*#__PURE__*/ (0, _reactDefault.default).createElement("h2", {}, "I'm an h2 tag")
+        /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {}, "I'm an h1 tagh8yfwqyryr  8r9 2"),
+        /*#__PURE__*/ (0, _reactDefault.default).createElement("h2", {}, "I'm an h4 tag")
     ]),
     /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
         id: "child2"

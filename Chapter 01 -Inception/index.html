@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namste React</title>
+    <link rel="stylesheet" href="index.css" />
+  
+   
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+   
+    <script src="./App.js" defer> 
+      // if your React code executes before the DOM is fully loaded. 
+      // App.js may run before the #root element is available in the DOM. Since the <head> loads before the <body>
+      //The defer attribute ensures App.js runs only after the full HTML is parsed.
+    </script>
+  </head>
+  <body>
+    <h1>Hello Top root</h1>
+    <!-- React is only working inside div#root-->
+    <div id="root">
+      <h1>Hello World!!</h1>
+      <h2>Good Morning Monika!!</h2>
+      <!-- This two tags are replaceed by parent element later -->
+    </div>
+    <h3>Hello Below root</h3>
+
+    <!-- Using Javascript -->
+    <!-- <script>
+      const heading = document.createElement("h1");
+      heading.innerHTML = "Hello World from Javascript!!";
+
+      const root = document.getElementById("root");
+      root.appendChild(heading);
+    </script> -->
+
+     <!-- <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script src="./App.js">  -->
+  </body>
+</html>

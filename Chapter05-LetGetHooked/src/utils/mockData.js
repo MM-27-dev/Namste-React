@@ -13,7 +13,7 @@ const reslist = [
     name: "Ibaco",
     cloudinaryImageId: "kyllhajjzwkzagnskpx6",
     cuisines: ["Pizza", "Italian"],
-    avgRating: "4.7",
+    avgRating: "3.8",
     sla: { deliveryTime: 30 },
   },
 
@@ -32,7 +32,7 @@ const reslist = [
     cloudinaryImageId:
       "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/10/b6dfd4f6-80ac-4180-890b-d4ad70366d27_508890.JPG",
     cuisines: ["Ice Cream", "Desserts"],
-    avgRating: "4.6",
+    avgRating: "3",
     sla: { deliveryTime: 26 },
   },
 ];

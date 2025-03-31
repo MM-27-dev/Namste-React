@@ -1,156 +1,113 @@
+# 📚 Episode 05: Let's Get Hooked! 🎣
 
-# Episode 3 - Laying The Foundation
+## 🚀 Understanding ES6 Exports & Imports
 
-## 🛠️ Part 1 - Using NPM Scripts
+### 🔹 Named Export
+✅ Multiple exports per file.
+✅ Must use `{}` while importing.
+✅ Name should match the exported name.
 
-- To start your project with Parcel, you can either run:
-  ```bash
-  npx parcel index.html
-  ```
-- However, a more convenient way is to add scripts in `package.json`. This allows you to start the project with simple npm commands.
-  Here's an example of the script section:
-  ```json
-  "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "test": "jest"
-  }
-  ```
-- You can now start your project using:
-  ```bash
-  npm start
-  ```
+```js
+// Exporting
+export const MyComponent = () => {};
+export const MyComponent2 = () => {};
 
----
-
-## 🖼️ Part 2 - Rendering Elements with React
-
-- In **React**, we use the `createElement` method to create elements, which are then rendered to the DOM using `root.render()`.
-- **React.createElement** returns a JavaScript object, which gets transformed into an HTML element when rendered on the DOM.
-
----
-
-## 🔄 Part 3 - JSX vs React
-
-- **JSX** is a syntax that allows us to write HTML-like code within JavaScript. However, it’s not exactly HTML; it looks like HTML but behaves differently.
-- **JSX** makes writing React components easier, but it's optional.
-  
-### Creating a Heading in React:
-- Without JSX (Core React):
-  ```javascript
-  const heading = React.createElement(
-    "h1", 
-    { id: "heading" }, 
-    "Namaste React Using Core React ✨"
-  );
-  ```
-- With JSX:
-  ```javascript
-  const jsxHeading = <h1>Namaste React using JSX ✨</h1>;
-  ```
-
-- Both methods output the same result under the hood: an object representation of the DOM.
-  
-### What Happens Behind the Scenes:
-1. JSX code is **transpiled** by Babel into React's `createElement` calls.
-2. The result is a **React element**, which is essentially a JavaScript object.
-3. The React element is then **rendered** into an **HTML element** in the browser.
-
-### JSX Syntax Rules:
-- Use `className` instead of `class`.
-- Wrap multiple lines of JSX in parentheses.
-- Use **camelCase** for JSX attributes.
-
----
-
-## 🔧 Part 4 - Understanding React Components
-
-### Types of React Components:
-1. **Class-Based Components**: The old way of writing components using JavaScript classes.
-2. **Functional Components**: The modern approach using JavaScript functions.
-
-### Creating Functional Components:
-- With return statement:
-  ```jsx
-  const HeadingComponent = () => {
-    return <h1>Namaste React Functional Component ✨</h1>;
-  };
-  ```
-- Without return statement:
-  ```jsx
-  const HeadingComponent = () => (
-    <div id="container">
-      <h1 className="heading">Namaste React Functional Component ✨</h1>
-    </div>
-  );
-  ```
-
-- Both versions are valid. JSX can be returned directly from the arrow function.
-
----
-
-## 🏗️ Part 5 - Component Composition
-
-### Rendering Elements and Components:
-- **React Element**:
-  ```jsx
-  const heading = (
-    <h1 className="head" tabIndex="5">Namaste React Element!</h1>
-  );
-  root.render(heading);
-  ```
-
-- **Functional Component**:
-  ```jsx
-  const HeadingComponent = () => (
-    <div id="container">
-      <h1 className="heading">Namaste React Functional Component ✨</h1>
-    </div>
-  );
-  root.render(<HeadingComponent />);
-  ```
-
-### Composing Components:
-- Components can be composed by nesting them within each other.
-  
-Example:
-```jsx
-const Title = () => (
-  <h1 className="heading">Namaste React Title ✨</h1>
-);
-
-const Heading = () => (
-  <div id="container">
-    <Title />
-    <h1 className="heading">Namaste React Functional Component ✨</h1>
-  </div>
-);
+// Importing
+import { MyComponent, MyComponent2 } from "./MyComponent";
+import { MyComponent2 as MyNewComponent } from "./MyComponent";
 ```
 
-- This is called **Component Composition**, where one component renders another.
+### 🔹 Default Export
+✅ Only one default export per file.
+✅ No `{}` required while importing.
+✅ Can be imported with any name.
+
+```js
+// Exporting
+default MyComponent = () => {};
+export default MyComponent;
+
+// Importing
+import MyComponent from "./MyComponent";
+```
+
+### 🔹 * as Export
+✅ Imports everything from the module.
+✅ Access components using dot notation.
+
+```js
+// Exporting
+export const MyComponent = () => {};
+export const MyComponent2 = () => {};
+export const MyComponent3 = () => {};
+
+// Importing
+import * as MainComponents from "./MyComponent";
+
+// Using
+<MainComponents.MyComponent />
+<MainComponents.MyComponent2 />
+<MainComponents.MyComponent3 />
+```
+
+### 🔹 Named & Default Export Together
+```js
+export const MyComponent2 = () => {};
+const MyComponent = () => {};
+export default MyComponent;
+
+// Importing
+import MyComponent, { MyComponent2 } from "./MyComponent";
+```
 
 ---
 
-## 📝 Part 6 - Using Arrow Functions vs Normal Functions
+## 🎣 What are React Hooks?
+📌 Introduced in React 16.8 🚀
+📌 Reusable JavaScript functions for managing state & side effects
+📌 No need to change component hierarchy
+📌 Enhances component reusability
 
-- You can use regular functions instead of arrow functions to define components:
-  ```jsx
-  const Title = function () {
-    return <h1>This is done using a normal function!</h1>;
-  };
-  ```
-- Arrow functions are the modern standard (introduced in ES6) and preferred for their cleaner syntax.
+### 🛠 Common Built-in Hooks
+
+- 🔹 `useState` → Manages state 🏗️
+- 🔹 `useEffect` → Handles side effects 🌊
+- 🔹 `useContext` → Provides access to context 📦
+- 🔹 `useReducer` → Alternative for complex state management 🤹
+- 🔹 `useCallback` → Memoizes functions ⚡
+- 🔹 `useMemo` → Memoizes values 🏎️
+- 🔹 `useRef` → Creates a mutable reference 🎯
+- 🔹 `useLayoutEffect` → Fires after all DOM mutations 🏗️
+- 🔹 `useDebugValue` → Adds debug info 🐞
 
 ---
 
-## 🔐 Part 7 - Security in JSX
+## 🔥 Why Do We Need `useState`?
+✅ Maintains state in functional components 🔄
+✅ Tracks state changes dynamically 🧐
+✅ Returns an array with state and an updater function ⚙️
 
-- JSX helps prevent cross-site scripting (XSS) attacks by escaping values automatically.
-- You can pass JavaScript expressions within `{}` in JSX.
+### 📝 Syntax
+```js
+const [state, setState] = useState(initialState);
+```
 
-### Ways to Write Components in JSX:
-1. `{Title()}`
-2. `<Title />`
-3. `<Title></Title>`
+### 🛠 Importing
+```js
+import React, { useState } from "react";
+```
 
-All these are valid methods for rendering components in JSX.
+### 💡 Example
+```js
+const Example = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+};
+```
+
+🚀 Happy Coding! 🎉

@@ -1,13 +1,12 @@
 //Not using keys (not acceptble) <<< index as key <<<<unique id (best practice)
 import RestaurantCard from "./RestaurantCard";
 import reslist from "../utils/mockData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Body = () => {
-  
-    const [resListState, setResListState] = useState(reslist);
+  const [resListState, setResListState] = useState(reslist);
 
-   
+
   return (
     <div className="body">
       <div className="Filter">

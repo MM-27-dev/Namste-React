@@ -1,8 +1,17 @@
 import React from "react";
 import { CDN_URL } from "../utils/constants";
+import { addItem, removeItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
+const ItemList = ({ items, showRemoveItem = false }) => {
+  const dispatch = useDispatch();
+  const handleAddItem = (item) => {
+    //Dispatch on Action
+    dispatch(addItem(item));
+  };
 
-const ItemList = ({ items }) => {
-  
+  const handleItemDelete = (item) => {
+    dispatch(removeItem(item));
+  };
 
   return (
     <div>
@@ -13,9 +22,7 @@ const ItemList = ({ items }) => {
         >
           <div className="w-9/12">
             <div className="py-2">
-              <span className="font-bold ">
-                {item.card.info.name}
-              </span>
+              <span className="font-bold ">{item.card.info.name}</span>
               <span>
                 {" "}
                 - Rs{" "}
@@ -27,10 +34,21 @@ const ItemList = ({ items }) => {
             <p className="text-sm text-left">{item.card.info.description}</p>
           </div>
           <div className="w-5/12 p-4">
-            <div className="absolute  ">
-              <button className="p-2 float-left mx-10 rounded-sm text-white shadow-lg bg-black ">
+            <div className="absolute space-x-2">
+              <button
+                className="p-2 float-left  rounded-sm text-white shadow-lg bg-black "
+                onClick={() => handleAddItem(item)}
+              >
                 Add +
               </button>
+              {showRemoveItem && (
+                <button
+                  className="p-2 float-left rounded-sm text-white shadow-lg bg-black"
+                  onClick={() => handleItemDelete(item)}
+                >
+                  Remove -
+                </button>
+              )}
             </div>
             <img src={CDN_URL + item.card.info.imageId} className="w-full" />
           </div>

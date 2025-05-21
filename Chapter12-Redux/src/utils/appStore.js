@@ -1,8 +1,14 @@
-import configureStore from "@reduxjs/toolkit";
+import {configureStore} from "@reduxjs/toolkit";
+import reducer from "./cartSlice";
+import cartReducer from "./cartSlice"
 
-//Using comfigurestore creating the store and adding slice inside it9Within the {})
+//Using configurestore creating the store and adding slice inside it9Within the {})
 const appStore = configureStore({
-
+    //This reducer for whole store and it consistes of the reducer of the slices in the store
+  reducer : {
+    //This is the reducer consists of the slices of the reducer
+    cart : cartReducer
+  }
 });
 
 export default appStore;
